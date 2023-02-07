@@ -12,7 +12,17 @@ $(document).ready(function(){  // keep everything contained in here this ensures
         .then((response) => response.json())
         .then((data) => console.log(data));  
     }
+ 
+    function jikan () { // fetch jikan api
+        const jikan= "https://api.jikan.moe/v4/random/anime";
+        fetch(jikan) 
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+    }
 
+
+
+    
 
         
     
@@ -22,6 +32,7 @@ $(document).ready(function(){  // keep everything contained in here this ensures
     strtBtn.click(function(){   //click handler
         alert("click!");
         fetchSpoontacular();
+        jikan();
     });
 
 
