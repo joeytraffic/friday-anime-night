@@ -15,6 +15,10 @@ main div div p {
     display: block; /* we will switch to display none once the search button is clicked */
 }
 
+.material-symbols-outlined {
+    vertical-align: middle
+} 
+
 /* we will uncomment this next line and have the search button switch display to block */
 /* .results-container { 
     display: none;
