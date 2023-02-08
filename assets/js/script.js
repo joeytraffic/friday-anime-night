@@ -53,7 +53,7 @@ $(document).ready(function(){  // keep everything contained in here this ensures
         .then(function (data) { 
             console.log(data.data);
             animetitle.text(data.data.title);
-            animeurl.text("Click here for anime").attr("href",data.data.url);
+            animeurl.text("Click here for anime!").attr("href",data.data.url);
             animeimage.attr("src",data.data.images.jpg.large_image_url);
             animesynopsis.text(data.data.synopsis);
         
