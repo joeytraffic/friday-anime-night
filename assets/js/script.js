@@ -2,6 +2,12 @@ var spoonacularRecipeTitle = $('#food-title');
 var spoonacularImage = $("#food-image");
 var spoonacularLink = $("#food-link");
 var spoonacularSummary = $("#food-summary");
+
+var animetitle = $('#anime-title');
+var animeurl = $('#anime-link');
+var animeimage = $('#anime-image');
+var animesynopsis = $('#anime-synopsis');
+
 $(document).ready(function(){  // keep everything contained in here this ensures jquery is ready before any other code is executed
     
     var storedFood = JSON.parse(localStorage.getItem("food")) || []; //pulls stored data out of the local storage related to food or declares stored food as and empty array
@@ -37,12 +43,23 @@ $(document).ready(function(){  // keep everything contained in here this ensures
     }
 
  
-    function jikan () { // fetch jikan api
+    function jikan (){// fetch jikan api
         const jikan= "https://api.jikan.moe/v4/random/anime";
-        fetch(jikan) 
-        .then((response) => response.json())
-        .then((data) => console.log(data));
+
+
+        fetch(jikan).then(function (response) {
+            if(response.ok){ 
+        response.json()
+        .then(function (data) { 
+            console.log(data.data);
+            animetitle.text(data.data.title);
+            animeurl.text("Click here for anime").attr("href",data.data.url);
+            animeimage.attr("src",data.data.images.jpg.large_image_url);
+            animesynopsis.text(data.data.synopsis);
         
+        });
+        }});
+
     }
 
 
@@ -52,11 +69,10 @@ $(document).ready(function(){  // keep everything contained in here this ensures
 
         
     
-    function fetchJikan(){}  //fetch jikan api 
+    
     
     
     strtBtn.click(function(){   //click handler
-        alert("click!");
         fetchSpoontacular();
         jikan();
     });
