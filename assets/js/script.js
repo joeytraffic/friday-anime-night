@@ -10,32 +10,28 @@ var animesynopsis = $('#anime-synopsis');
 
 $(document).ready(function(){  // keep everything contained in here this ensures jquery is ready before any other code is executed
     
-    var storedFood = JSON.parse(localStorage.getItem("food")) || []; //pulls stored data out of the local storage related to food or declares stored food as and empty array
-    localStorage.setItem("food",JSON.stringify(storedFood));  //sets local storage to the pulled data or empty array when jquery loads 
     
     console.log("jqueryready");// debug to confirm jquery is loaded 
 
     var strtBtn = $("#start-btn"); //start button variable
     
     function fetchSpoontacular(){//fetch spoontacular api
-        const spoonacularUrl = "https://api.spoonacular.com/recipes/random/?";   // spoonacular fetch url
-        const spoonApiKey = "apiKey=ad5d29ecd2fe482aabd08b828d7593a3";   // spoonacular api key
+        const spoonacularUrl = "https://api.spoonacular.com/recipes/random/?";
+        const spoonApiKey = "apiKey=ad5d29ecd2fe482aabd08b828d7593a3";
 
         
         fetch(spoonacularUrl + spoonApiKey).then(function (response) { 
-            if(response.ok){ 
+            if(response.ok){
         response.json()
         .then(function (data) { 
             console.log(data);
-            spoonacularRecipeTitle.text(data.recipes[0].title);   // sets food title element with data from spoon 
-            spoonacularLink.text("Click here for the recipe!").attr("href",data.recipes[0].sourceUrl); // sets the link element to data from spoon 
-            spoonacularImage.attr("src",data.recipes[0].image);  //sets the image src to data from spoon 
-            spoonacularSummary.html(data.recipes[0].summary);   // sets the summary element to data from spoon 
-            storedFood.push(data.recipes[0].title); // pushs a new title to the array from spoon data 
-            localStorage.setItem('food',JSON.stringify(storedFood)); // stores the stored food array  into the local storage 
-
-
-
+            spoonacularRecipeTitle.text(data.recipes[0].title);
+            spoonacularImage.attr("src",data.recipes[0].image);
+            spoonacularLink.text("Click here for Recipe!");
+            spoonacularSummary.html(data.recipes[0].summary);
+            spoonacularLink.click(function(){
+                window.open(data.recipes[0].sourceUrl);
+            });
          });
                
         }});
@@ -45,21 +41,21 @@ $(document).ready(function(){  // keep everything contained in here this ensures
  
     function jikan (){// fetch jikan api
         const jikan= "https://api.jikan.moe/v4/random/anime";
-
-
         fetch(jikan).then(function (response) {
             if(response.ok){ 
         response.json()
         .then(function (data) { 
             console.log(data.data);
             animetitle.text(data.data.title);
-            animeurl.text("Click here for anime!").attr("href",data.data.url);
+            animeurl.text("Click here for anime!");
             animeimage.attr("src",data.data.images.jpg.large_image_url);
             animesynopsis.text(data.data.synopsis);
+            animeurl.click(function(){
+                window.open(data.data.url);
+            });
         
         });
         }});
-
     }
 
 
