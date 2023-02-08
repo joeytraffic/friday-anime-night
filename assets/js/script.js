@@ -8,6 +8,9 @@ var animeurl = $('#anime-link');
 var animeimage = $('#anime-image');
 var animesynopsis = $('#anime-synopsis');
 
+var refreshRecipe = $("#refresh-recipe");
+var refreshAnime = $("#refresh-anime");
+
 $(document).ready(function(){  // keep everything contained in here this ensures jquery is ready before any other code is executed
     
     
@@ -65,8 +68,13 @@ $(document).ready(function(){  // keep everything contained in here this ensures
 
         
     
+    refreshRecipe.click(function(){ // refreshes recipie
+        fetchSpoontacular();
+    })
     
-    
+    refreshAnime.click(function(){ // refreshes anime
+        jikan();
+    });
     
     strtBtn.click(function(){   //click handler
         fetchSpoontacular();
