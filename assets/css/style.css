@@ -1,0 +1,21 @@
+body {
+    height: 100vh;   
+}
+
+main div div p {
+    text-align: center;
+}
+
+.image {
+    width: 100%;
+    object-fit: contain;
+}
+
+.search-container {
+    display: block; /* we will switch to display none once the search button is clicked */
+}
+
+/* we will uncomment this next line and have the search button switch display to block */
+/* .results-container { 
+    display: none;
+} */

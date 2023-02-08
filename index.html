@@ -4,41 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Friday Anime Night</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <link src="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" integrity="sha512-5fsy+3xG8N/1PV5MIJz9ZsWpkltijBI48gBzQ/Z2eVATePGHOkMIn+xTDHIfTZFVb9GMpflF2wOWItqxAP2oLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-    <nav>
+    <header>
         <h1>Friday Anime Night</h1>
-    </nav>
+    </header>
+
+    <hr>
 
     <main>
-        <div id="search-container">
-            <button id="start-btn">Search for food and anime!</button>
-            <p id="start-prompt">Click this button for a recipe to make and an anime to watch tonight.</p>
+        <!-- to hide this container, switch the "display: block" to "display: none" -->
+        <div id="search-container" class="container search-container">
+            <div class="row">
+                <div class="row button-container">
+                    <button class="button-primary four columns offset-by-four"id="start-btn">Start!</button>
+                </div>
+            </div>
+            <p class="six columns offset-by-three" id="start-prompt">Click this button for a recipe to make and an anime to watch tonight.</p>
         </div>
 
-        <div id="results-container">
-            <div id="recipe-container">
-                <h2 id="food-title">PLACEHOLDERTITLE</h2>
-                <a href="" id="food-link">clickhere</a>
-                <ul id="ingredients">
-                </ul>
-                <p id="food-summary"></p>
-                <img src="" id="food-image" alt="food image"/>
-            </div>
+        <!-- to display this container, switch the "display: none" to "display: block" -->
+        <div class="container results-container"> 
+            <div class="row twelve columns" id="results-container">
+                <div id="recipe-container" class="six columns">
+                    <h5 id="food-title">PLACEHOLDERTITLE</h2>
+                    <a href="" id="food-link">clickhere</a>
+                    <ul id="ingredients">
+                    </ul>
+                    <p id="food-summary"></p>
+                    <img class="image" src="" id="food-image" alt="food image"/>
+                </div>
 
-            <div id="anime-container">
-                <h2 id="anime-title">PLACEHOLDERTITLE</h2>
-                <span id="age-range"></span>
-                <a href="" id="anime-link"></a>
-                <img src="" id="anime-image" alt="anime image"/>
+                <div id="anime-container" class="six columns">
+                    <h5 id="anime-title">PLACEHOLDERTITLE</h2>
+                    <span id="age-range"></span>
+                    <a href="" id="anime-link"></a>
+                    <img class="image" src="" id="anime-image" alt="anime image"/>
+                </div>
             </div>
         </div>
-
     </main>
     <script src="./assets/js/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </body>
+
 </html>
