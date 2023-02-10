@@ -1,5 +1,18 @@
+header {
+    background-color: #EEEEEE;
+    margin: 0;
+    padding: 1rem;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: te; */
+}
+
 body {
-    height: 100vh;   
+    height: 100vh;  
+    margin: 0; 
 }
 
 main div div p {
@@ -19,7 +32,11 @@ main div div p {
     vertical-align: middle
 } 
 
+
+
 /* we will uncomment this next line and have the search button switch display to block */
 /* .results-container { 
     display: none;
 } */
+
+
