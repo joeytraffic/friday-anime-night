@@ -1,4 +1,4 @@
-header {
+body header {
     background-color: #EEEEEE;
     margin: 0;
     padding: 1rem;
@@ -7,12 +7,16 @@ header {
     padding-right: 2rem;
     display: flex;
     justify-content: space-between;
-    /* background-color: te; */
+}
+
+body header h1 {
+    font-family: 'Assistant', sans-serif;
 }
 
 body {
     height: 100vh;  
     margin: 0; 
+
 }
 
 main div div p {
@@ -24,19 +28,13 @@ main div div p {
     object-fit: contain;
 }
 
-.search-container {
-    display: block; /* we will switch to display none once the search button is clicked */
-}
-
 .material-symbols-outlined {
     vertical-align: middle
 } 
 
 
-
-/* we will uncomment this next line and have the search button switch display to block */
-/* .results-container { 
+.results-container { 
     display: none;
-} */
+}
 
 
