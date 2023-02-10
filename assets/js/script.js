@@ -15,13 +15,21 @@ $(document).ready(function(){  // keep everything contained in here this ensures
     
     
     console.log("jqueryready");// debug to confirm jquery is loaded 
+    for (let i = 0; i < JSON.parse(localStorage.getItem('food')).length; i++){
+        console.log(JSON.parse(localStorage.getItem('food'))[i]);
+    };
+    
+    for (let i = 0; i < JSON.parse(localStorage.getItem('anime')).length; i++){
+        console.log(JSON.parse(localStorage.getItem('anime'))[i]);
+    };
 
     var strtBtn = $("#start-btn"); //start button variable
     
     function fetchSpoontacular(){//fetch spoontacular api
         const spoonacularUrl = "https://api.spoonacular.com/recipes/random/?";
         const spoonApiKey = "apiKey=ad5d29ecd2fe482aabd08b828d7593a3";
-
+         var storedFood = JSON.parse(localStorage.getItem("food")) || []; //pulls stored data out of the local storage related to food or declares stored food as and empty array
+        localStorage.setItem("food",JSON.stringify(storedFood));  //sets local storage to the pulled data or empty array when jquery loads 
         
         fetch(spoonacularUrl + spoonApiKey).then(function (response) { 
             if(response.ok){
@@ -32,6 +40,8 @@ $(document).ready(function(){  // keep everything contained in here this ensures
             spoonacularImage.attr("src",data.recipes[0].image);
             spoonacularLink.text("Click here for Recipe!");
             spoonacularSummary.html(data.recipes[0].summary);
+            storedFood.push(data.recipes[0].title); // pushs a new title to the array from spoon data 
+            localStorage.setItem('food',JSON.stringify(storedFood)); // stores the stored food array  into the local storage 
             spoonacularLink.click(function(){
                 window.open(data.recipes[0].sourceUrl);
             });
@@ -44,6 +54,10 @@ $(document).ready(function(){  // keep everything contained in here this ensures
  
     function jikan (){// fetch jikan api
         const jikan= "https://api.jikan.moe/v4/random/anime";
+
+        var storedAnime = JSON.parse(localStorage.getItem("anime")) || []; //pulls stored data out of the local storage related to food or declares stored food as and empty array
+        localStorage.setItem("anime",JSON.stringify(storedAnime));  //sets local storage to the pulled data or empty array when jquery loads 
+
         fetch(jikan).then(function (response) {
             if(response.ok){ 
         response.json()
@@ -53,6 +67,8 @@ $(document).ready(function(){  // keep everything contained in here this ensures
             animeurl.text("Click here for anime!");
             animeimage.attr("src",data.data.images.jpg.large_image_url);
             animesynopsis.text(data.data.synopsis);
+            storedAnime.push(data.data.title); // pushs a new title to the array from spoon data 
+            localStorage.setItem('anime',JSON.stringify(storedAnime)); // stores the stored food array  into the local storage
             animeurl.click(function(){
                 window.open(data.data.url);
             });
