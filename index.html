@@ -8,18 +8,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" integrity="sha512-5fsy+3xG8N/1PV5MIJz9ZsWpkltijBI48gBzQ/Z2eVATePGHOkMIn+xTDHIfTZFVb9GMpflF2wOWItqxAP2oLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
     <header>
         <h1>Friday Anime Night</h1>
+        <h2>(ᵔᴥᵔ)</h2>
     </header>
 
-    <hr>
+    <br>
+    <br>
 
     <main>
-        <!-- to hide this container, switch the "display: block" to "display: none" -->
         <div id="search-container" class="container search-container">
             <div class="row">
                 <div class="row button-container">
@@ -40,6 +42,9 @@
                     <a class="button" id="refresh-recipe">
                         <span class="material-symbols-outlined">refresh</span>
                     </a>
+                    <a class="button" id="favorite-recipe-btn">
+                        <span class="material-symbols-outlined">favorite</span>
+                    </a>
                     
                     <p id="food-summary"></p>
                     <img class="image" src="" id="food-image" alt="food image"/>
@@ -51,10 +56,18 @@
                     <a class="button" id="refresh-anime">
                         <span class="material-symbols-outlined">refresh</span>
                     </a>
+                    <a class="button" id="favorite-anime-btn">
+                        <span class="material-symbols-outlined">favorite</span>
+                    </a>
                     <p id="anime-synopsis"></p>
                     <img class="image" src="" id="anime-image" alt="anime image"/>
                 </div>
             </div>
+        </div>
+
+        <div class= "container favorites-container">
+            <ul id="saved-favorite-recipe"></ul>
+            <ul id="saved-favorite-anime"></ul>
         </div>
     </main>
     <script src="./assets/js/script.js"></script>
