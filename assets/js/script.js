@@ -23,17 +23,21 @@ $(document).ready(function(){  // keep everything contained in here this ensures
     
     console.log("jqueryready");// debug to confirm jquery is loaded 
     
+    var strtBtn = $("#start-btn"); //start button variable
     
-        for (let i = 0; i < JSON.parse(localStorage.getItem('food')).length; i++){
-        renderFavRecipe.append("<li class='stored-food-item'>" + JSON.parse(localStorage.getItem('food'))[i] + "</li>");
+    if(JSON.parse(localStorage.getItem('food')) !== null){
+    
+    
+    for (let i = 0; i < JSON.parse(localStorage.getItem('food')).length; i++){
+    renderFavRecipe.append("<li class='stored-food-item'>" + JSON.parse(localStorage.getItem('food'))[i] + "</li>");
     };
-  
-
+}
+    if (JSON.parse(localStorage.getItem('anime')) !== null){
+    
     for (let i = 0; i < JSON.parse(localStorage.getItem('anime')).length; i++){
         renderFavAnime.append("<li class='stored-anime-item'>" + JSON.parse(localStorage.getItem('anime'))[i] + "</li>");
     };
-
-    var strtBtn = $("#start-btn"); //start button variable
+    }
     
     function fetchSpoontacular(){//fetch spoontacular api
         const spoonacularUrl = "https://api.spoonacular.com/recipes/random/?";
@@ -123,7 +127,7 @@ $(document).ready(function(){  // keep everything contained in here this ensures
     });
     
     strtBtn.click(function(){   //click handler
-        resultsContainer.css("display", "block");
+        
         fetchSpoontacular();
         jikan();
     });
