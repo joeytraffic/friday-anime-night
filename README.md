@@ -35,7 +35,7 @@ https://api.spoonacular.com/recipes/random/?
 
 https://api.jikan.moe/v4/random/anime
 
-###Contrubutors 
+### Contributors 
 
 Tanner Tieman  
 Joseph Tranvik
