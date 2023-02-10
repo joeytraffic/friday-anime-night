@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" integrity="sha512-5fsy+3xG8N/1PV5MIJz9ZsWpkltijBI48gBzQ/Z2eVATePGHOkMIn+xTDHIfTZFVb9GMpflF2wOWItqxAP2oLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -34,8 +37,8 @@
     <hr>
 
         <!-- to display this container, switch the "display: none" to "display: block" -->
-        <div class="container results-container"> 
-            <div class="row twelve columns" id="results-container">
+        <div class="container results-container" id="results-container"> 
+            <div class="row twelve columns">
                 <div id="recipe-container" class="six columns">
                     <h5 id="food-title"></h2>
                     <a class="button button-primary" href="" id="food-link"></a>
@@ -64,10 +67,16 @@
                 </div>
             </div>
         </div>
-
+        <hr>
         <div class= "container favorites-container">
-            <ul id="saved-favorite-recipe"></ul>
+            <div class="six columns">
+                <h4>Favorite recipes:</h4>
+                <ul id="saved-favorite-recipe"></ul>
+            </div>
+            <div class="six columns">
+                <h4>Favorite anime:</h4>
             <ul id="saved-favorite-anime"></ul>
+            </div>
         </div>
     </main>
     <script src="./assets/js/script.js"></script>
