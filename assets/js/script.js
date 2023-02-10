@@ -127,7 +127,7 @@ $(document).ready(function(){  // keep everything contained in here this ensures
     });
     
     strtBtn.click(function(){   //click handler
-        
+        resultsContainer.css("display","block");
         fetchSpoontacular();
         jikan();
     });
