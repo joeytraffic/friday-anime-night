@@ -45,3 +45,7 @@ main div div p {
 .btn-close {
     transform: scale(.5);
 }
+
+.btn-closeA {
+    transform: scale(.5);
+}
