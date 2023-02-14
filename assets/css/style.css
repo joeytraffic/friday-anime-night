@@ -16,11 +16,17 @@ body header h1 {
 body {
     height: 100vh;  
     margin: 0; 
-
 }
 
 main div div p {
     text-align: center;
+}
+
+.logo-img {
+    width: 80px;
+    height: 80px;
+    /* float: right; */
+    border-radius: 100%;
 }
 
 .image {
@@ -28,6 +34,14 @@ main div div p {
     object-fit: contain;
 }
 
+.placeholder-image {
+    border-radius: 10px;
+}
+
 .material-symbols-outlined {
     vertical-align: middle
 } 
+
+.btn-close {
+    transform: scale(.5);
+}
