@@ -25,7 +25,6 @@ main div div p {
 .logo-img {
     width: 80px;
     height: 80px;
-    /* float: right; */
     border-radius: 100%;
 }
 
@@ -42,10 +41,13 @@ main div div p {
     vertical-align: middle
 } 
 
+
+
+/* had to resize the buttons for the li elements */
 .btn-close {
     transform: scale(.5);
 }
 
-.btn-closeA {
+.btn-closeA { 
     transform: scale(.5);
 }
